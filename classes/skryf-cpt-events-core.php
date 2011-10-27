@@ -127,8 +127,6 @@ class SkryfCptEvents {
 		// Register scripts in full or minified version based on the SCRIPT_DEBUG constant
 		if(defined('SCRIPT_DEBUG') && SCRIPT_DEBUG == true) {
 			
-			wp_register_script('jquery-ui-widget', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.widget.js', array('jquery', 'jquery-ui-core'), '1.8.12');
-			wp_register_script('jquery-ui-mouse', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.mouse.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget'), '1.8.12');
 			wp_register_script('jquery-ui-slider', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.slider.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse'), '1.8.12');
 			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.js', array('jquery', 'jquery-ui-core'), '1.8.12');
 			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
@@ -137,8 +135,6 @@ class SkryfCptEvents {
 		}
 		else {
 			
-			wp_register_script('jquery-ui-widget', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.widget.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
-			wp_register_script('jquery-ui-mouse', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.mouse.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget'), '1.8.12');
 			wp_register_script('jquery-ui-slider', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.slider.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse'), '1.8.12');
 			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
 			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
