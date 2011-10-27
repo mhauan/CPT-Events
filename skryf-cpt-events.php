@@ -16,6 +16,9 @@ define('SKRYF_CPT_EVENTS_URI', plugins_url(NULL, __FILE__));
 // Set to true for debuging
 define('SKRYF_DEBUG', true);
 
+// Define finished localizations
+define('SKRYF_CPT_EVENTS_LOCALE', serialize(array("en_US", "nb_NO")));
+
 
 /*
 LOAD LOCALIZATION FILES

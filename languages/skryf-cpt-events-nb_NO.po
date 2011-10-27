@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skryf-cpt-events\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-27 14:29+0100\n"
-"PO-Revision-Date: 2011-10-27 14:46+0100\n"
+"POT-Creation-Date: 2011-10-27 15:59+0100\n"
+"PO-Revision-Date: 2011-10-27 15:59+0100\n"
 "Last-Translator: Morten Hauan <morten@hauan.me>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -63,121 +63,133 @@ msgstr "Ingen arrangementer funnet"
 msgid "No events found in Trash"
 msgstr "Ingen arrangementer funnet i søppelkurven"
 
-#: ../classes/skryf-cpt-events-core.php:66
+#: ../classes/skryf-cpt-events-core.php:71
 msgid "Categories"
 msgstr "Kategorier"
 
-#: ../classes/skryf-cpt-events-core.php:67
-#: ../classes/skryf-cpt-events-core.php:76
+#: ../classes/skryf-cpt-events-core.php:72
+#: ../classes/skryf-cpt-events-core.php:81
 msgid "Category"
 msgstr "Kategori"
 
-#: ../classes/skryf-cpt-events-core.php:68
+#: ../classes/skryf-cpt-events-core.php:73
 msgid "Search Categories"
 msgstr "Søk i kategorier"
 
-#: ../classes/skryf-cpt-events-core.php:69
+#: ../classes/skryf-cpt-events-core.php:74
 msgid "All Categories"
 msgstr "Alle kategorier"
 
-#: ../classes/skryf-cpt-events-core.php:70
+#: ../classes/skryf-cpt-events-core.php:75
 msgid "Parent Category"
 msgstr "Foreldrekategori"
 
-#: ../classes/skryf-cpt-events-core.php:71
+#: ../classes/skryf-cpt-events-core.php:76
 msgid "Parent Category:"
 msgstr "Foreldrekategori:"
 
-#: ../classes/skryf-cpt-events-core.php:72
+#: ../classes/skryf-cpt-events-core.php:77
 msgid "Edit Category"
 msgstr "Rediger kategori"
 
-#: ../classes/skryf-cpt-events-core.php:73
+#: ../classes/skryf-cpt-events-core.php:78
 msgid "Update Category"
 msgstr "Oppdater kategori"
 
-#: ../classes/skryf-cpt-events-core.php:74
+#: ../classes/skryf-cpt-events-core.php:79
 msgid "Add New Category"
 msgstr "Legg til ny kategori"
 
-#: ../classes/skryf-cpt-events-core.php:75
+#: ../classes/skryf-cpt-events-core.php:80
 msgid "New Category Name"
 msgstr "Navn på ny kategori"
 
-#: ../classes/skryf-cpt-events-core.php:89
-#: ../classes/skryf-cpt-events-core.php:103
+#: ../classes/skryf-cpt-events-core.php:94
+#: ../classes/skryf-cpt-events-core.php:108
 msgid "Tags"
 msgstr "Stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:90
+#: ../classes/skryf-cpt-events-core.php:95
 msgid "Tag"
 msgstr "Stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:91
+#: ../classes/skryf-cpt-events-core.php:96
 msgid "Search Tags"
 msgstr "Søk i stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:92
+#: ../classes/skryf-cpt-events-core.php:97
 msgid "Popular Tags"
 msgstr "Populære stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:93
+#: ../classes/skryf-cpt-events-core.php:98
 msgid "All Tags"
 msgstr "Alle stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:96
+#: ../classes/skryf-cpt-events-core.php:101
 msgid "Edit Tag"
 msgstr "Rediger stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:97
+#: ../classes/skryf-cpt-events-core.php:102
 msgid "Update Tag"
 msgstr "Oppdater stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:98
+#: ../classes/skryf-cpt-events-core.php:103
 msgid "Add New Tag"
 msgstr "Legg til nytt stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:99
+#: ../classes/skryf-cpt-events-core.php:104
 msgid "New Tag Name"
 msgstr "Navn på nytt stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:100
+#: ../classes/skryf-cpt-events-core.php:105
 msgid "Separate tags with commas"
 msgstr "Separer stikkord med komma"
 
-#: ../classes/skryf-cpt-events-core.php:101
+#: ../classes/skryf-cpt-events-core.php:106
 msgid "Add or remove tags"
 msgstr "Legg til eller fjern stikkord"
 
-#: ../classes/skryf-cpt-events-core.php:102
+#: ../classes/skryf-cpt-events-core.php:107
 msgid "Choose from the most used tags"
 msgstr "Velg blant de mest brukte stikkordene"
 
-#: ../classes/skryf-cpt-events-core.php:164
+#: ../classes/skryf-cpt-events-core.php:172
 msgid "Time and place"
 msgstr "Tid og sted"
 
-#: ../meta/timeplace.php:4
+#: ../classes/skryf-cpt-events-core.php:193
+msgid "Close"
+msgstr "Lukk"
+
+#: ../classes/skryf-cpt-events-core.php:194
+msgid "Next"
+msgstr ""
+
+#: ../classes/skryf-cpt-events-core.php:195
+msgid "Today"
+msgstr ""
+
+#: ../meta/timeplace.php:5
 msgid "Start"
 msgstr "Start"
 
-#: ../meta/timeplace.php:6
+#: ../meta/timeplace.php:7
 msgid "Event start time"
 msgstr ""
 
-#: ../meta/timeplace.php:9
+#: ../meta/timeplace.php:10
 msgid "End"
 msgstr "Slutt"
 
-#: ../meta/timeplace.php:11
+#: ../meta/timeplace.php:12
 msgid "Event end time"
 msgstr ""
 
-#: ../meta/timeplace.php:14
+#: ../meta/timeplace.php:15
 msgid "Location"
 msgstr "Sted"
 
-#: ../meta/timeplace.php:16
+#: ../meta/timeplace.php:17
 msgid "Event location"
 msgstr ""
 

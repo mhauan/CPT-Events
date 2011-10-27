@@ -27,7 +27,7 @@ class SkryfCptEvents {
 		$labels = array(
 			'name' => _x('Events', 'post type general name', 'skryf-cpt-events'),
 			'singular_name' => _x('Event', 'post type singular name', 'skryf-cpt-events'),
-			'add_new' => _x('Add New', 'event', 'skryf-cpt-events'),
+			'add_new' => __('Add New', 'skryf-cpt-events'),
 			'add_new_item' => __('Add New Event', 'skryf-cpt-events'),
 			'edit_item' => __('Edit Event', 'skryf-cpt-events'),
 			'new_item' => __('New Event', 'skryf-cpt-events'),
@@ -133,18 +133,28 @@ class SkryfCptEvents {
 		if(defined('SCRIPT_DEBUG') && SCRIPT_DEBUG == true) {
 			
 			wp_register_script('jquery-ui-slider', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.slider.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse'), '1.8.12');
-			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.js', array('jquery', 'jquery-ui-core'), '1.8.12');
-			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
+			wp_register_script('jquery-ui-datepicker-core', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.js', array('jquery', 'jquery-ui-core'), '1.8.12');
+			wp_register_script('jquery-ui-timepicker-core', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
 			wp_register_script('skryf-cpt-events-core', SKRYF_CPT_EVENTS_URI . '/scripts/skryf.cpt.events.core.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-timepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '1.0');
 			
 		}
 		else {
 			
 			wp_register_script('jquery-ui-slider', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.slider.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse'), '1.8.12');
-			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
-			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
+			wp_register_script('jquery-ui-datepicker-core', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
+			wp_register_script('jquery-ui-timepicker-core', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget'), '0.9.7');
 			wp_register_script('skryf-cpt-events-core', SKRYF_CPT_EVENTS_URI . '/scripts/skryf.cpt.events.core.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-slider', 'jquery-ui-widget', 'jquery-ui-timepicker'), '1.0'); // OPTIMIZE: Add minified version of core script on launch
 			
+		}
+		
+		// Register localization scripts
+		if(defined('SKRYF_CPT_EVENTS_LOCALE') && in_array(get_locale(), unserialize(SKRYF_CPT_EVENTS_LOCALE)) && get_locale() != "en_US") {
+			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/i18n/jquery.ui.datepicker-' . get_locale() . '.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker-core'), '1.0');
+			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/i18n/jquery.ui.timepicker-' . get_locale() . '.js', array('jquery', 'jquery-ui-core', 'jquery-ui-timepicker-core'), '1.0');
+		}
+		else {
+			wp_register_script('jquery-ui-datepicker', NULL, array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker-core'), '1.0');
+			wp_register_script('jquery-ui-timepicker', NULL, array('jquery', 'jquery-ui-core', 'jquery-ui-timepicker-core'), '1.0');
 		}
 		
 		// Register styles
@@ -160,13 +170,16 @@ class SkryfCptEvents {
 			wp_enqueue_script('skryf-cpt-events-core');
 			wp_enqueue_style('skryf-cpt-events-admin');
 			
+			// Localize scripts
+			wp_localize_script('skryf-cpt-events-core', 'scpte_loc', SkryfCptEvents::get_language_strings());
+			
 		}
 		
 	}
 	
 	static function add_meta_boxes() {
 		
-		add_meta_box('skryf-cpt-events-meta', __('Time and place'), array('SkryfCptEvents', 'timeplace_meta'), 'skryf_cpt_events', 'side', 'high');
+		add_meta_box('skryf-cpt-events-meta', __('Time and place', 'skryf-cpt-events'), array('SkryfCptEvents', 'timeplace_meta'), 'skryf_cpt_events', 'side', 'high');
 		
 	}
 	
@@ -179,6 +192,14 @@ class SkryfCptEvents {
 	static function save_timeplace_meta($post_id) {
 		
 		
+		
+	}
+	
+	static function get_language_strings() {
+		
+		return array(
+		
+		);
 		
 	}
 

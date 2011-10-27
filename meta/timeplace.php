@@ -1,4 +1,5 @@
 <?php
+global $post;
 ?>
 <p>
 	<strong><?php _e('Start', 'skryf-cpt-events') ?></strong>
@@ -16,3 +17,4 @@
 	<span class="description"><?php _e('Event location', 'skryf-cpt-events') ?></span>
 </p>
 <?php 
+echo '<input type="hidden" name="skryf-cpt-events-noncename" value="' . wp_create_nonce(__FILE__) . '" />';
