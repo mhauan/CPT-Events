@@ -14,6 +14,12 @@ class SkryfCptEvents {
 		// Init taxonomies
 		add_action("init", array(&$this, "init_ctax"));
 		
+		// Init metaboxes
+		add_action("add_meta_boxes", array(&$this, "init_meta"));
+		
+		// Register admin scripts
+		add_action("admin_init", array(&$this, "register_scripts_css"));
+		
 	} // function
 	
 	static function init_cpt() { // Create custom post type
@@ -106,6 +112,48 @@ class SkryfCptEvents {
 			'rewrite' => array( 'slug' => 'event-tag' ),
 		));	
 
+	}
+	
+	static function register_scripts_css() {
+
+	    global $pagenow, $typenow;
+		// Fix to get $pagenow and $typenow during the admin_init hook
+	    if (empty($typenow) && !empty($_GET['post'])) {
+	        $post = get_post($_GET['post']);
+	        $typenow = $post->post_type;
+	    }
+		
+		
+		// Register scripts in full or minified version based on the SCRIPT_DEBUG constant
+		if(defined('SCRIPT_DEBUG') && SCRIPT_DEBUG == true) {
+			
+			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.js', array('jquery', 'jquery-ui-core'), '1.8.12');
+			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'), '0.9.7');
+			
+		}
+		else {
+			
+			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
+			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'), '0.9.7');
+			
+		}
+			
+		if (is_admin() && $pagenow=='post-new.php' OR $pagenow=='post.php' && $typenow=='skryf_cpt_events') { // Load only on the skryf_cpt_events pages
+			
+			wp_enqueue_script('jquery-ui-timepicker');
+			
+		}
+		
+	}
+	
+	static function init_meta() {
+		
+		add_meta_box('skryf-cpt-events-meta', __('Time and place'), array('SkryfCptEvents', 'timeplace_meta'), 'skryf_cpt_events', 'side', 'high');
+		
+	}
+	
+	static function timeplace_meta() {
+		require_once(SKRYF_CPT_EVENTS_DIR . "/meta/timeplace.php");
 	}
 
 }
