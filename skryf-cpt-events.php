@@ -6,6 +6,11 @@ Author: Morten Hauan
 Author URI: http://hauan.me
 */
 
+/*
+LOAD LOCALIZATION FILES
+*/
+load_plugin_textdomain( 'skryf-cpt-events', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
 
 /*
 INCLUDE CORE FILES
