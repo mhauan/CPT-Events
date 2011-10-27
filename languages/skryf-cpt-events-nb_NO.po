@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: skryf-cpt-events\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-27 14:29+0100\n"
-"PO-Revision-Date: 2011-10-27 14:29+0100\n"
+"PO-Revision-Date: 2011-10-27 14:46+0100\n"
 "Last-Translator: Morten Hauan <morten@hauan.me>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,129 +37,129 @@ msgstr "Legg til nytt arrangement"
 
 #: ../classes/skryf-cpt-events-core.php:32
 msgid "Edit Event"
-msgstr ""
+msgstr "Rediger arrangement"
 
 #: ../classes/skryf-cpt-events-core.php:33
 msgid "New Event"
-msgstr ""
+msgstr "Nytt arrangement"
 
 #: ../classes/skryf-cpt-events-core.php:34
 msgid "All Events"
-msgstr ""
+msgstr "Alle arrangementer"
 
 #: ../classes/skryf-cpt-events-core.php:35
 msgid "View Event"
-msgstr ""
+msgstr "Vis arrangement"
 
 #: ../classes/skryf-cpt-events-core.php:36
 msgid "Search Events"
-msgstr ""
+msgstr "Søk i arrangementer"
 
 #: ../classes/skryf-cpt-events-core.php:37
 msgid "No events found"
-msgstr ""
+msgstr "Ingen arrangementer funnet"
 
 #: ../classes/skryf-cpt-events-core.php:38
 msgid "No events found in Trash"
-msgstr ""
+msgstr "Ingen arrangementer funnet i søppelkurven"
 
 #: ../classes/skryf-cpt-events-core.php:66
 msgid "Categories"
-msgstr ""
+msgstr "Kategorier"
 
 #: ../classes/skryf-cpt-events-core.php:67
 #: ../classes/skryf-cpt-events-core.php:76
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: ../classes/skryf-cpt-events-core.php:68
 msgid "Search Categories"
-msgstr ""
+msgstr "Søk i kategorier"
 
 #: ../classes/skryf-cpt-events-core.php:69
 msgid "All Categories"
-msgstr ""
+msgstr "Alle kategorier"
 
 #: ../classes/skryf-cpt-events-core.php:70
 msgid "Parent Category"
-msgstr ""
+msgstr "Foreldrekategori"
 
 #: ../classes/skryf-cpt-events-core.php:71
 msgid "Parent Category:"
-msgstr ""
+msgstr "Foreldrekategori:"
 
 #: ../classes/skryf-cpt-events-core.php:72
 msgid "Edit Category"
-msgstr ""
+msgstr "Rediger kategori"
 
 #: ../classes/skryf-cpt-events-core.php:73
 msgid "Update Category"
-msgstr ""
+msgstr "Oppdater kategori"
 
 #: ../classes/skryf-cpt-events-core.php:74
 msgid "Add New Category"
-msgstr ""
+msgstr "Legg til ny kategori"
 
 #: ../classes/skryf-cpt-events-core.php:75
 msgid "New Category Name"
-msgstr ""
+msgstr "Navn på ny kategori"
 
 #: ../classes/skryf-cpt-events-core.php:89
 #: ../classes/skryf-cpt-events-core.php:103
 msgid "Tags"
-msgstr ""
+msgstr "Stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:90
 msgid "Tag"
-msgstr ""
+msgstr "Stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:91
 msgid "Search Tags"
-msgstr ""
+msgstr "Søk i stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:92
 msgid "Popular Tags"
-msgstr ""
+msgstr "Populære stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:93
 msgid "All Tags"
-msgstr ""
+msgstr "Alle stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:96
 msgid "Edit Tag"
-msgstr ""
+msgstr "Rediger stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:97
 msgid "Update Tag"
-msgstr ""
+msgstr "Oppdater stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:98
 msgid "Add New Tag"
-msgstr ""
+msgstr "Legg til nytt stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:99
 msgid "New Tag Name"
-msgstr ""
+msgstr "Navn på nytt stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:100
 msgid "Separate tags with commas"
-msgstr ""
+msgstr "Separer stikkord med komma"
 
 #: ../classes/skryf-cpt-events-core.php:101
 msgid "Add or remove tags"
-msgstr ""
+msgstr "Legg til eller fjern stikkord"
 
 #: ../classes/skryf-cpt-events-core.php:102
 msgid "Choose from the most used tags"
-msgstr ""
+msgstr "Velg blant de mest brukte stikkordene"
 
 #: ../classes/skryf-cpt-events-core.php:164
 msgid "Time and place"
-msgstr ""
+msgstr "Tid og sted"
 
 #: ../meta/timeplace.php:4
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: ../meta/timeplace.php:6
 msgid "Event start time"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ../meta/timeplace.php:9
 msgid "End"
-msgstr ""
+msgstr "Slutt"
 
 #: ../meta/timeplace.php:11
 msgid "Event end time"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../meta/timeplace.php:14
 msgid "Location"
-msgstr ""
+msgstr "Sted"
 
 #: ../meta/timeplace.php:16
 msgid "Event location"
