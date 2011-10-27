@@ -13,6 +13,9 @@ define('SKRYF_CPT_EVENTS_VERSION', '1.0dev');
 define('SKRYF_CPT_EVENTS_DIR', dirname(__FILE__));
 define('SKRYF_CPT_EVENTS_URI', plugins_url(NULL, __FILE__));
 
+// Set to true for debuging
+define('SKRYF_DEBUG', true);
+
 
 /*
 LOAD LOCALIZATION FILES

@@ -15,10 +15,10 @@ class SkryfCptEvents {
 		add_action("init", array(&$this, "init_ctax"));
 		
 		// Init metaboxes
-		add_action("add_meta_boxes", array(&$this, "init_meta"));
+		add_action("add_meta_boxes", array(&$this, "add_meta_boxes"));
 		
 		// Register admin scripts
-		add_action("admin_init", array(&$this, "register_scripts_css"));
+		add_action("admin_init", array(&$this, "admin_init"));
 		
 	} // function
 	
@@ -40,6 +40,11 @@ class SkryfCptEvents {
 			'menu_name' => __('Events', 'skryf-cpt-events')
 		);
 
+		$supports = array('title','editor','author','thumbnail','excerpt','comments','trackbacks');
+		
+		// Show custom-fields if in SKRYF Debug mode
+		if(defined('SKRYF_DEBUG') && SKRYF_DEBUG == true) $supports[] = 'custom-fields';
+		
 		$args = array(
 			'labels' => $labels,
 			'public' => true,
@@ -52,7 +57,7 @@ class SkryfCptEvents {
 			'has_archive' => true, 
 			'hierarchical' => false,
 			'menu_position' => null,
-			'supports' => array('title','editor','author','thumbnail','excerpt','comments','trackbacks')
+			'supports' => $supports,
 		); 
 
 		register_post_type('skryf_cpt_events',$args);		
@@ -114,7 +119,7 @@ class SkryfCptEvents {
 
 	}
 	
-	static function register_scripts_css() {
+	static function admin_init() {
 
 	    global $pagenow, $typenow;
 		// Fix to get $pagenow and $typenow during the admin_init hook
@@ -159,14 +164,22 @@ class SkryfCptEvents {
 		
 	}
 	
-	static function init_meta() {
+	static function add_meta_boxes() {
 		
 		add_meta_box('skryf-cpt-events-meta', __('Time and place'), array('SkryfCptEvents', 'timeplace_meta'), 'skryf_cpt_events', 'side', 'high');
 		
 	}
 	
 	static function timeplace_meta() {
+		
 		require_once(SKRYF_CPT_EVENTS_DIR . "/meta/timeplace.php");
+	
+	}
+	
+	static function save_timeplace_meta($post_id) {
+		
+		
+		
 	}
 
 }
