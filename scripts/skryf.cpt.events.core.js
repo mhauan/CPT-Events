@@ -5,4 +5,8 @@
 */
 
 jQuery(function($) {
+
+	$( "#skryf-cpt-events-start" ).datetimepicker();
+	$( "#skryf-cpt-events-end" ).datetimepicker();
+	
 });
