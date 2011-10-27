@@ -2,17 +2,21 @@
 // SCPTE core class
 class SkryfCptEvents {
 	
+	function SkryfCptEvents() {
+		$this->__construct();
+	} // function
+	
 	function __construct() {
-		
+
 		 // Init custom post type
-		$this->init_cpt();
+		add_action("init", array(&$this, "init_cpt"));
 		
 		// Init taxonomies
-		$this->init_ctax();
+		add_action("init", array(&$this, "init_ctax"));
 		
-	}
+	} // function
 	
-	private function init_cpt() { // Create custom post type
+	static function init_cpt() { // Create custom post type
 		
 		$labels = array(
 			'name' => _x('Events', 'post type general name', 'skryf-cpt-events'),
@@ -22,7 +26,7 @@ class SkryfCptEvents {
 			'edit_item' => __('Edit Event', 'skryf-cpt-events'),
 			'new_item' => __('New Event', 'skryf-cpt-events'),
 			'all_items' => __('All Events', 'skryf-cpt-events'),
-			'view_item' => __('View Event', 'skryf-cpt-events'),
+			'view_item' => __('View Event', 'skryf-cpt-events'),	
 			'search_items' => __('Search Events', 'skryf-cpt-events'),
 			'not_found' =>  __('No events found', 'skryf-cpt-events'),
 			'not_found_in_trash' => __('No events found in Trash', 'skryf-cpt-events'), 
@@ -42,14 +46,14 @@ class SkryfCptEvents {
 			'has_archive' => true, 
 			'hierarchical' => false,
 			'menu_position' => null,
-			'supports' => array('title','editor','author','thumbnail','excerpt','comments')
+			'supports' => array('title','editor','author','thumbnail','excerpt','comments','trackbacks')
 		); 
 
 		register_post_type('skryf_cpt_events',$args);		
 				
 	}
 	
-	private function init_ctax() { // Create taxonomies
+	static function init_ctax() { // Create taxonomies
 	
 		// Make new Category taxonomy for event
 		$labels = array(
