@@ -2,6 +2,12 @@
 // SCPTE core class
 class SkryfCptEvents {
 	
+	function __construct() {
+		
+		$this->init_cpt(); // Init custom post type
+		
+	}
+	
 	private function init_cpt() { // Create custom post type
 		
 		$labels = array(
