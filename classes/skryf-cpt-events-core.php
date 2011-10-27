@@ -129,18 +129,27 @@ class SkryfCptEvents {
 			
 			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.js', array('jquery', 'jquery-ui-core'), '1.8.12');
 			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'), '0.9.7');
+			wp_register_script('skryf-cpt-events-core', SKRYF_CPT_EVENTS_URI . '/scripts/skryf.cpt.events.core.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-timepicker'), '1.0');
 			
 		}
 		else {
 			
 			wp_register_script('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.datepicker.min.js', array('jquery', 'jquery-ui-core'), '1.8.12');
 			wp_register_script('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/scripts/jquery.ui.timepicker.min.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'), '0.9.7');
+			wp_register_script('skryf-cpt-events-core', SKRYF_CPT_EVENTS_URI . '/scripts/skryf.cpt.events.core.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-timepicker'), '1.0'); // OPTIMIZE: Add minified version of core script on launch
 			
 		}
-			
+		
+		// Register styles
+		wp_register_style('jquery-ui-core', SKRYF_CPT_EVENTS_URI . '/css/jquery.ui.core.css', NULL, '1.8.12');
+		wp_register_style('jquery-ui-datepicker', SKRYF_CPT_EVENTS_URI . '/css/jquery.ui.datepicker.css', array('jquery-ui-core'), '1.8.12');
+		wp_register_style('jquery-ui-timepicker', SKRYF_CPT_EVENTS_URI . '/css/jquery.ui.timepicker.css', array('jquery-ui-core', 'jquery-ui-datepicker'), '0.9.7');
+		wp_register_style('skryf-cpt-events-admin', SKRYF_CPT_EVENTS_URI . '/css/skryf.cpt.events.admin.css', array('jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-timepicker'), '1.0');
+
 		if (is_admin() && $pagenow=='post-new.php' OR $pagenow=='post.php' && $typenow=='skryf_cpt_events') { // Load only on the skryf_cpt_events pages
 			
-			wp_enqueue_script('jquery-ui-timepicker');
+			wp_enqueue_script('skryf-cpt-events-core');
+			wp_enqueue_style('skryf-cpt-events-admin');
 			
 		}
 		
